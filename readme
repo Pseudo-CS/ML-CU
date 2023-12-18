@@ -1,1 +1,12 @@
+install git for windows from - https://git-scm.com/download/win
+open git bash and do the following
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
 
+open anaconda prompt and run: conda install -c conda-forge jupyterlab jupyterlab-git
+restart anaconda
+
+open jupyter lab
+from the toolbar open git->clone repo-> enter the following url
+https://github.com/Pseudo-CS/ML-CU.git
+authenticate your github account 
