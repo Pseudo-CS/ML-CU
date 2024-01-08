@@ -1,0 +1,4 @@
+to update local foler : git pull origin main
+to update a certain file : git add filename
+git commit -m "Update filename with new changes"
+git push origin filename
