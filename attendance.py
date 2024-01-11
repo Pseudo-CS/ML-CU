@@ -90,7 +90,7 @@ def testVal(inStr, acttyp):
 
 
 logo = Image.open("UI_Image/0001.png")
-logo = logo.resize((50, 47), Image.ANTIALIAS)
+logo = logo.resize((50, 47), Image.LANCZOS)
 logo1 = ImageTk.PhotoImage(logo)
 titl = tk.Label(window, bg="black", relief=RIDGE, bd=10, font=("arial", 35))
 titl.pack(fill=X)
