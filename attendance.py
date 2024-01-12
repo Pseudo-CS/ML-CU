@@ -37,7 +37,7 @@ trainimage_path = "TrainingImage/"
 studentdetail_path = (
     "StudentDetails/studentdetails.csv"
 )
-attendance_path = "/"
+attendance_path = "Attendence/"
 
 
 window = Tk()
