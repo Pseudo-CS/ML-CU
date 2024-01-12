@@ -22,6 +22,7 @@ def TrainImage(haarcasecade_path, trainimage_path, trainimagelabel_path, message
 def getImagesAndLables(path):
     # imagePath = [os.path.join(path, f) for d in os.listdir(path) for f in d]
     newdir = [os.path.join(path, d) for d in os.listdir(path)]
+    print('newdir')
     imagePath = [
         os.path.join(newdir[i], f)
         for i in range(len(newdir))

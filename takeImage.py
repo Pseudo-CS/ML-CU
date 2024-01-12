@@ -27,6 +27,7 @@ def TakeImage(l1, l2, haarcasecade_path, trainimage_path, message, err_screen,te
             sampleNum = 0
             directory = Enrollment + "_" + Name
             path = os.path.join(trainimage_path, directory)
+            print(path)
             os.mkdir(path)
             while True:
                 ret, img = cam.read()
@@ -36,7 +37,7 @@ def TakeImage(l1, l2, haarcasecade_path, trainimage_path, message, err_screen,te
                     cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
                     sampleNum = sampleNum + 1
                     cv2.imwrite(
-                        f"{path}\ "
+                        f"{path}/ "
                         + Name
                         + "_"
                         + Enrollment
@@ -54,7 +55,7 @@ def TakeImage(l1, l2, haarcasecade_path, trainimage_path, message, err_screen,te
             cv2.destroyAllWindows()
             row = [Enrollment, Name]
             with open(
-                "C:\\Users\\patel\\OneDrive\\Documents\\E\\FBAS\\StudentDetails\\studentdetails.csv",
+                "StudentDetails/studentdetails.csv",
                 "a+",
             ) as csvFile:
                 writer = csv.writer(csvFile, delimiter=",")
