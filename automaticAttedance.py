@@ -128,6 +128,7 @@ def subjectChoose(text_to_speech):
                     + Second
                     + ".csv"
                 )
+                
                 attendance = attendance.drop_duplicates(["Enrollment"], keep="first")
                 print(attendance)
                 attendance.to_csv(fileName, index=False)
