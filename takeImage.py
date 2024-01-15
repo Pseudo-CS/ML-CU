@@ -8,16 +8,16 @@ import time
 
 
 # take Image of user
-def TakeImage(l1, l2, haarcasecade_path, trainimage_path, message, err_screen,text_to_speech):
+def TakeImage(l1, l2, haarcasecade_path, trainimage_path, message, err_screen): # removed ,text_to_speech
     if (l1 == "") and (l2==""):
         t='Please Enter the your Enrollment Number and Name.'
-        text_to_speech(t)
+        print(t)
     elif l1=='':
         t='Please Enter the your Enrollment Number.'
-        text_to_speech(t)
+        print(t)
     elif l2 == "":
         t='Please Enter the your Name.'
-        text_to_speech(t)
+        print(t)
     else:
         try:
             cam = cv2.VideoCapture(0)
@@ -63,7 +63,7 @@ def TakeImage(l1, l2, haarcasecade_path, trainimage_path, message, err_screen,te
                 csvFile.close()
             res = "Images Saved for ER No:" + Enrollment + " Name:" + Name
             message.configure(text=res)
-            text_to_speech(res)
+            print(res)
         except FileExistsError as F:
             F = "Student Data already exists"
-            text_to_speech(F)
+            print(F)

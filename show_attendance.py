@@ -6,18 +6,20 @@ import csv
 import tkinter as tk
 from tkinter import *
 
-def subjectchoose(text_to_speech):
+def subjectchoose(): #removed text_to_speech 
     def calculate_attendance():
         Subject = tx.get()
         if Subject=="":
             t='Please enter the subject name.'
-            text_to_speech(t)
-        os.chdir(
-            f"/{Subject}"
-        )
+            #text_to_speech(t)
+            print(t)
+        # os.chdir(
+        #     f"Attendance/{Subject}"
+        # )
         filenames = glob(
             f"Attendance/{Subject}/{Subject}*.csv"
         )
+        
         df = [pd.read_csv(f) for f in filenames]
         newdf = df[0]
         for i in range(1, len(df)):
@@ -27,7 +29,7 @@ def subjectchoose(text_to_speech):
         for i in range(len(newdf)):
             newdf["Attendance"].iloc[i] = str(int(round(newdf.iloc[i, 2:-1].mean() * 100)))+'%'
             #newdf.sort_values(by=['Enrollment'],inplace=True)
-        newdf.to_csv("attendance.csv", index=False)
+        newdf.to_csv(f"Attendance/{Subject}/attendance.csv", index=False)
 
         root = tkinter.Tk()
         root.title("Attendance of "+Subject)
@@ -83,7 +85,8 @@ def subjectchoose(text_to_speech):
         sub = tx.get()
         if sub == "":
             t="Please enter the subject name!!!"
-            text_to_speech(t)
+            #text_to_speech(t)
+            print(t)
         else:
             os.startfile(
             f"Attendance/{sub}"
