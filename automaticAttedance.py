@@ -21,7 +21,7 @@ studentdetail_path = (
 )
 attendance_path = "Attendance/"
 # for choose subject and fill attendance
-def subjectChoose(text_to_speech):
+def subjectChoose(): #removed text_to_speech argument
     def FillAttendance():
         sub = tx.get()
         now = time.time()
@@ -30,7 +30,8 @@ def subjectChoose(text_to_speech):
         print(future)
         if sub == "":
             t = "Please enter the subject name!!!"
-            text_to_speech(t)
+            print(t)
+            #text_to_speech(t)
         else:
             try:
                 recognizer = cv2.face.LBPHFaceRecognizer_create()
@@ -46,7 +47,7 @@ def subjectChoose(text_to_speech):
                         font=("times", 15, "bold"),
                     )
                     Notifica.place(x=20, y=250)
-                    text_to_speech(e)
+                    #text_to_speech(e)
                 facecasCade = cv2.CascadeClassifier(haarcasecade_path)
                 df = pd.read_csv(studentdetail_path)
                 cam = cv2.VideoCapture(0)
@@ -130,7 +131,6 @@ def subjectChoose(text_to_speech):
                 )
                 
                 attendance = attendance.drop_duplicates(["Enrollment"], keep="first")
-                print(attendance)
                 attendance.to_csv(fileName, index=False)
 
                 m = "Attendance Filled Successfully of " + Subject
@@ -143,7 +143,8 @@ def subjectChoose(text_to_speech):
                     bd=5,
                     font=("times", 15, "bold"),
                 )
-                text_to_speech(m)
+                #text_to_speech(m)
+                print(m)
 
                 Notifica.place(x=20, y=250)
 
@@ -158,7 +159,7 @@ def subjectChoose(text_to_speech):
                 root.configure(background="black")
                 cs = os.path.join(path, fileName)
                 print(cs)
-                with open(cs, newline="") as file:
+                with open(fileName, newline="") as file:
                     reader = csv.reader(file)
                     r = 0
 
@@ -183,7 +184,8 @@ def subjectChoose(text_to_speech):
                 print(attendance)
             except:
                 f = "No Face found for attendance"
-                text_to_speech(f)
+                #text_to_speech(f)
+                print(f)
                 cv2.destroyAllWindows()
 
     ###windo is frame for subject chooser
@@ -219,13 +221,14 @@ def subjectChoose(text_to_speech):
     )
 
     def Attf():
-        sub = tx.get()
+        sub = 'Attendance/'+tx.get()
         if sub == "":
             t = "Please enter the subject name!!!"
-            text_to_speech(t)
+            print(t)
+            #text_to_speech(t)
         else:
             os.startfile(
-                f"Attendance/{sub}"
+                f"{os.path.abspath(sub)}"
             )
 
     attf = tk.Button(

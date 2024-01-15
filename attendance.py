@@ -23,10 +23,10 @@ import automaticAttedance
 # engine.runAndWait()
 
 
-def text_to_speech(user_text):
-    engine = pyttsx3.init()
-    engine.say(user_text)
-    engine.runAndWait()
+# def text_to_speech(user_text):
+#     engine = pyttsx3.init()
+#     engine.say(user_text)
+#     engine.runAndWait()
 
 
 haarcasecade_path = "haarcascade_frontalface_default.xml"
@@ -242,7 +242,7 @@ def TakeImageUI():
             trainimage_path,
             message,
             err_screen,
-            text_to_speech,
+            #text_to_speech,
         )
         txt1.delete(0, "end")
         txt2.delete(0, "end")
@@ -269,7 +269,7 @@ def TakeImageUI():
             trainimage_path,
             trainimagelabel_path,
             message,
-            text_to_speech,
+            #text_to_speech,
         )
 
     # train Image function call
@@ -303,7 +303,7 @@ r.place(x=100, y=520)
 
 
 def automatic_attedance():
-    automaticAttedance.subjectChoose(text_to_speech)
+    automaticAttedance.subjectChoose() #removed text_to_speech argument
 
 
 r = tk.Button(
@@ -321,7 +321,7 @@ r.place(x=600, y=520)
 
 
 def view_attendance():
-    show_attendance.subjectchoose(text_to_speech)
+    show_attendance.subjectchoose() #removed text_to_speech argument
 
 
 r = tk.Button(
