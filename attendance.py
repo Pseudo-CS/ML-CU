@@ -233,10 +233,10 @@ def TakeImageUI():
     )
     message.place(x=250, y=270)
 
-    def take_image():
-        l1 = txt1.get()
+    def take_image():    # Define a function to view attendance
+        l1 = txt1.get()    # Get values from text input fields
         l2 = txt2.get()
-        takeImage.TakeImage(
+        takeImage.TakeImage(    # Call the TakeImage function with the specified parameters
             l1,
             l2,
             haarcasecade_path,
@@ -245,7 +245,7 @@ def TakeImageUI():
             err_screen,
             #text_to_speech,
         )
-        txt1.delete(0, "end")
+        txt1.delete(0, "end")    # Clear text input fields after taking the image
         txt2.delete(0, "end")
 
     # take Image button
@@ -264,8 +264,8 @@ def TakeImageUI():
     )
     takeImg.place(x=130, y=350)
 
-    def train_image():
-        trainImage.TrainImage(
+    def train_image():    # Define a function to train the image
+        trainImage.TrainImage(    # Call the TrainImage function with the specified parameters
             haarcasecade_path,
             trainimage_path,
             trainimagelabel_path,
@@ -274,6 +274,7 @@ def TakeImageUI():
         )
 
     # train Image function call
+    # Button for training the image
     trainImg = tk.Button(
         ImageUI,
         text="Train Image",
@@ -289,34 +290,34 @@ def TakeImageUI():
     trainImg.place(x=360, y=350)
 
 
-r = tk.Button(
-    window,
-    text="Register a new student",
-    command=TakeImageUI,
-    bd=10,
-    font=("times new roman", 16),
-    bg="black",
-    fg="yellow",
-    height=2,
-    width=17,
+r = tk.Button(    # Create a button to register a new student
+    window,   # Specify the parent window for the button
+    text="Register a new student",   # Set the text for the button
+    command=TakeImageUI,   # Assign the TakeImageUI function to be called when the button is clicked
+    bd=10,   # Set the border width for the button
+    font=("times new roman", 16),   # Set the font for the button text
+    bg="black",   # Set the background color for the button
+    fg="yellow",   # Set the foreground color for the button text
+    height=2,   # Set the height of the button in text lines
+    width=17,   # Set the width of the button in text characters
 )
-r.place(x=100, y=520)
+r.place(x=100, y=520)    # Use the place method to position the button at a specific location in the window
 
 
-def automatic_attedance():
-    automaticAttedance.subjectChoose() #removed text_to_speech argument
+def automatic_attedance():    # Define the function for taking attendance
+    automaticAttedance.subjectChoose()    #removed text_to_speech argument
 
 
-r = tk.Button(
-    window,
-    text="Take Attendance",
-    command=automatic_attedance,
-    bd=10,
-    font=("times new roman", 16),
-    bg="black",
-    fg="yellow",
-    height=2,
-    width=17,
+r = tk.Button(    # Create a button to take attendance
+    window,   # Specify the parent window for the button
+    text="Take Attendance",   # Set the text for the button
+    command=automatic_attedance,   # Assign the automaticAttedance function to be called when the button is clicked
+    bd=10,   # Set the border width for the button
+    font=("times new roman", 16),   # Set the font for the button text
+    bg="black",   # Set the background color for the button
+    fg="yellow",   # Set the foreground color for the button text
+    height=2,   # Set the height of the button in text lines
+    width=17,   # Set the width of the button in text characters
 )
 r.place(x=600, y=520)
 
@@ -324,29 +325,29 @@ r.place(x=600, y=520)
 def view_attendance():
     show_attendance.subjectchoose() #removed text_to_speech argument
 
-
+# Create a button to view attendance
 r = tk.Button(
-    window,
-    text="View Attendance",
-    command=view_attendance,
-    bd=10,
-    font=("times new roman", 16),
-    bg="black",
-    fg="yellow",
-    height=2,
-    width=17,
+    window,    # Specify the parent window for the button
+    text="View Attendance",    # This is the text that will be displayed on the button
+    command=view_attendance,    # Assign the view_attendance function to be called when the button is clicked
+    bd=10,    # Set the border width for the button
+    font=("times new roman", 16),    # Set the font for the button text
+    bg="black",    # Set the background color for the button
+    fg="yellow",    # Set the foreground color for the button text
+    height=2,    # Set the height of the button in text lines
+    width=17,    # Set the width of the button in text characters
 )
-r.place(x=1000, y=520)
-r = tk.Button(
-    window,
-    text="EXIT",
-    bd=10,
-    command=quit,
-    font=("times new roman", 16),
-    bg="black",
-    fg="yellow",
-    height=2,
-    width=17,
+r.place(x=1000, y=520)    # Use the place method to position the button at a specific location in the window
+r = tk.Button(    # Create an EXIT button
+    window,    # Specify the parent window for the button
+    text="EXIT",    # Set the text for the button
+    bd=10,    # Set the border width for the button
+    command=quit,    # Set the command to quit the application when the button is clicked
+    font=("times new roman", 16),    # Set the font for the button text
+    bg="black",    # Set the background color for the button
+    fg="yellow",    # Set the foreground color for the button text
+    height=2,    # Set the height of the button in text lines
+    width=17,    # Set the width of the button in text characters
 )
 r.place(x=600, y=660)
 
