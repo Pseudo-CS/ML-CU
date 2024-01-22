@@ -11,6 +11,7 @@ import time
 import tkinter.ttk as tkk
 import tkinter.font as font
 
+# Specify paths for Haarcascade XML file, training image labels, training images, student details CSV, and attendance directory
 haarcasecade_path = "haarcascade_frontalface_default.xml"
 trainimagelabel_path = (
     "TrainingImageLabel/Trainner.yml"
@@ -20,24 +21,27 @@ studentdetail_path = (
     "StudentDetails/studentdetails.csv"
 )
 attendance_path = "Attendance/"
-# for choose subject and fill attendance
-def subjectChoose(): #removed text_to_speech argument
-    def FillAttendance():
+# Define a function for choosing a subject and filling attendance
+def subjectChoose():
+    def FillAttendance(): # Define a nested function for filling attendance
+        # Retrieve the entered subject
         sub = tx.get()
         now = time.time()
         future = now + 20
         print(now)
         print(future)
+        # Check if subject is not provided
         if sub == "":
             t = "Please enter the subject name!!!"
             print(t)
             #text_to_speech(t)
         else:
-            try:
+            try: # Initialize LBPH face recognizer
                 recognizer = cv2.face.LBPHFaceRecognizer_create()
-                try:
+                try: # Try to read the trained model
                     recognizer.read(trainimagelabel_path)
                 except:
+                    # Handle the case when the model is not found
                     e = "Model not found,please train model"
                     Notifica.configure(
                         text=e,
