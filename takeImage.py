@@ -49,7 +49,7 @@ def TakeImage(l1, l2, haarcasecade_path, trainimage_path, message, err_screen): 
                     cv2.imshow("Frame", img)
                 if cv2.waitKey(1) & 0xFF == ord("q"):
                     break
-                elif sampleNum > 50:
+                elif sampleNum > 100: #increase sample size from 50 to 100
                     break
             cam.release()
             cv2.destroyAllWindows()
