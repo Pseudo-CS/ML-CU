@@ -84,11 +84,11 @@ def err_screen(): # Creating a new window 'sc1' using the 'tk.Tk()' command from
     ).place(x=110, y=50) # places the button at the position x=110, y=50 in the parent window
 
 
-def testVal(inStr, acttyp):
-    if acttyp == "1":  # insert
-        if not inStr.isdigit():
-            return False
-    return True
+# def testVal(inStr, acttyp):
+#     if acttyp == "1":  # insert
+#         if not inStr.isdigit():
+#             return False
+#     return True
 
 
 logo = Image.open("UI_Image/0001.png") #Opening the logo image
@@ -100,7 +100,7 @@ l1 = tk.Label(window, image=logo1, bg="black",) #Creating a label with the logo 
 l1.place(x=470, y=10) # Placing the logo image at the position (470, 10) in the window
 
 titl = tk.Label( #
-    window, text="Smart College!!", bg="black", fg="green", font=("arial", 27), 
+    window, text="Christ College!!", bg="black", fg="green", font=("arial", 27), 
 ) #Creating a label with the text "Smart College!!" and setting its background color, foreground color, font, and position
 titl.place(x=525, y=12) #Placing the label at the position (525, 12) in the window
 
@@ -233,7 +233,7 @@ def TakeImageUI():
     )
     message.place(x=250, y=270)
 
-    def take_image():    # Define a function to view attendance
+    def take_image():    # Function to access the takeImage class
         l1 = txt1.get()    # Get values from text input fields
         l2 = txt2.get()
         takeImage.TakeImage(    # Call the TakeImage function with the specified parameters
