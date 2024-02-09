@@ -9,7 +9,7 @@ import time
 
 
 # take Image of user
-def TakeImage(l1, l2, haarcasecade_path, trainimage_path, message, err_screen): # removed ,text_to_speech
+def TakeImage(l1, l2, haarcasecade_path, trainimage_path, message, err_screen): 
     """
     Function to take image of user.
     Parameters:
