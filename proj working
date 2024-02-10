@@ -1,1 +1,38 @@
 The algorithm we used here for classification is "haar cascade algorithm" - https://www.javatpoint.com/haar-cascade-algorithm
+This Algorithm is based on a Machine Learning approach in which lots of images are used, whether positive or negative, to train the classifier.
+Positive Images: Positive Images are a type of image that we want our classifier to identify.
+Negative Images: Negative Images are a type of image that contains something else, i.e., it does not contain the objects we want to detect.
+
+This involves Four Stages that include:
+
+Haar Features Calculation
+Integral Images Creation
+Adaboost Usage
+Cascading Classifiers Implementation
+1. Haar Features Calculation: Gathering the Haar features is the first stage. Haar features are nothing but a 
+calculation that happens on adjacent regions at a certain location in a separate detecting window. The calculation 
+mainly includes adding the pixel intensities in every region and between the sum differences calculation.
+
+
+2. Integral Image Creation: Creating Integral Images reduces the calculation. Instead of calculating at every pixel, it creates the sub-rectangles, and the array references those sub-rectangles and calculates the Haar Features.
+
+Haar Cascade Algorithm
+The only important features are those of an object, and mostly all the remaining Haar features are irrelevant in the case of object detection. But how do we choose from among the hundreds of thousands of Haar features the ones that best reflect an object? Here Adaboost enters the picture.
+
+3. Adaboost Training:
+
+Haar Cascade Algorithm
+The "weak classifiers" are combined by Adaboost Training to produce a "strong classifier" that the object detection method can use. This essentially consists of selecting useful features and teaching classifiers how to use them.
+
+By moving a window across the input image and computing the Haar characteristics for each part of the image, weak learners are created. This distinction stands in contrast to a threshold that can be trained to tell objects apart from non-objects. These are "weak classifiers," but an accurate strong classifier needs many Haar properties.
+
+In the final step, weak learners might be combined with strong learners.
+
+4. Cascading Classifiers Implementation:
+
+Haar Cascade Algorithm
+Every sage at this point is actually a group of inexperienced students. Boosting trains weak learners, resulting in a highly accurate classifier from the average prediction of all weak learners.
+
+It depends based upon the prediction. The classifier decides for indication of an object that was found positive or moved to the next region, i.e., negative. Because most windows do not contain anything of interest, stages are created to reject negative samples as quickly as feasible.
+
+Because classifying an object as a non-object would significantly hurt your object detection system, having a low false negative rate is crucial.
