@@ -84,11 +84,11 @@ def err_screen(): # Creating a new window 'sc1' using the 'tk.Tk()' command from
     ).place(x=110, y=50) # places the button at the position x=110, y=50 in the parent window
 
 
-# def testVal(inStr, acttyp):
-#     if acttyp == "1":  # insert
-#         if not inStr.isdigit():
-#             return False
-#     return True
+def testVal(inStr, acttyp):
+    if acttyp == "1":  # insert
+        if not inStr.isdigit():
+            return False
+    return True
 
 
 logo = Image.open("UI_Image/0001.png") #Opening the logo image
