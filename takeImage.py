@@ -41,7 +41,6 @@ def TakeImage(l1, l2, haarcasecade_path, trainimage_path, message, err_screen):
             Enrollment = l1
             Name = l2
             # initialize the sample number and create a directory for the images
-            sampleNum = 0
             total = 0
             directory = Enrollment + "_" + Name
             path = os.path.join(trainimage_path, directory)
@@ -59,7 +58,6 @@ def TakeImage(l1, l2, haarcasecade_path, trainimage_path, message, err_screen):
                     # For each detected face in the faces list, the code iterates over the coordinates and dimensions (x, y, w, h) and 
                     # draws a rectangle around the detected face on the original color frame (img) using cv2.rectangle().
                     cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
-                    sampleNum = sampleNum + 1
                     total = total + 1
                     cv2.imwrite(
                         f"{path}/ "
@@ -77,10 +75,6 @@ def TakeImage(l1, l2, haarcasecade_path, trainimage_path, message, err_screen):
                     cv2.imshow("Frame", img)
                 if cv2.waitKey(1) & 0xFF == ord("q"): # condition to exit cam
                     break
-                elif sampleNum == 35:  # taking 35 samples of left, center and right specifically 
-                    print('change angle')
-                    sampleNum = 0
-                    time.sleep(5)
                 elif total > 100: #increase sample size from 50 to 100
                     break
             cam.release()
