@@ -10,3 +10,4 @@ open jupyter lab
 from the toolbar open git->clone repo-> enter the following url
 https://github.com/Pseudo-CS/ML-CU.git
 authenticate your github account 
+
